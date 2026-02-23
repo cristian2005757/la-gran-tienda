@@ -1,0 +1,8 @@
+[
+  {"id":"1","nombre":"María G.","evento":"Revelación de género","frase":"¡El humo de colores quedó espectacular! Super atentos y el precio muy bueno.","estrellas":5,"foto":"/images/testimonials/01.jpg"},
+  {"id":"2","nombre":"Carlos R.","evento":"Boda","frase":"Nos ayudaron con todo: papelillo, serpentinas y máquina de humo. 100% recomendados.","estrellas":5,"foto":"/images/testimonials/02.jpg"},
+  {"id":"3","nombre":"Ana L.","evento":"Cumpleaños 15","frase":"La torta de revelación fue el hit de la fiesta. Todo llegó a tiempo y perfecto.","estrellas":5,"foto":"/images/testimonials/03.jpg"},
+  {"id":"4","nombre":"Diego M.","evento":"Show en vivo","frase":"Profesionalismo total. El bote de humo dio el efecto que buscábamos.","estrellas":5,"foto":"/images/testimonials/04.jpg"},
+  {"id":"5","nombre":"Laura S.","evento":"Revelación de género","frase":"Muy rápidos en responder por WhatsApp. El extintor de revelación fue la estrella.","estrellas":5,"foto":"/images/testimonials/05.jpg"},
+  {"id":"6","nombre":"Andrés P.","evento":"Evento corporativo","frase":"Excelente servicio. Confeti, serpentinas y chispitas. Nos vemos en el próximo evento.","estrellas":5,"foto":"/images/testimonials/06.jpg"}
+]

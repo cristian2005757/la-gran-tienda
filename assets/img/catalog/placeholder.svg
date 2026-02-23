@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect fill="#12121a" width="400" height="300"/>
+  <text x="50%" y="50%" fill="rgba(255,255,255,0.2)" font-family="sans-serif" font-size="14" text-anchor="middle" dy=".3em">Sin imagen</text>
+</svg>

@@ -1,0 +1,8 @@
+[
+  {"id":"humo","nombre":"Máquina de humo","descripcion":"Efectos de humo y niebla para crear atmósfera en bodas, fiestas y shows.","icono":"smoke"},
+  {"id":"humo-colores","nombre":"Humo de colores","descripcion":"Humo en diversos tonos para revelaciones de género y momentos épicos.","icono":"colors"},
+  {"id":"papelillo","nombre":"Papelillo y confeti","descripcion":"Papelillo metálico, de color, dorado y confeti para celebraciones.","icono":"confetti"},
+  {"id":"serpentinas","nombre":"Serpentinas","descripcion":"Cintas decorativas para decorar y celebrar.","icono":"ribbon"},
+  {"id":"tortas","nombre":"Tortas de revelación","descripcion":"Tortas 49T, abanico, dulce sorpresa para revelaciones inolvidables.","icono":"cake"},
+  {"id":"accesorios","nombre":"Accesorios","descripcion":"Extintores, biber, spray y más efectos para tu evento.","icono":"star"}
+]

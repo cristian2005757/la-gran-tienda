@@ -1,0 +1,11 @@
+[
+  {"id":"humo","nombre":"Humo y efectos","descripcion":"Humo de colores, botes, máquinas. Ideal para revelaciones, bodas y shows.","icono":"smoke"},
+  {"id":"papelillo","nombre":"Papelillo y confeti","descripcion":"Papelillo metálico, de color, dorado y confeti para celebraciones.","icono":"confetti"},
+  {"id":"tortas","nombre":"Tortas de revelación","descripcion":"49T, abanico, dulce sorpresa. Tortas impactantes para revelaciones.","icono":"cake"},
+  {"id":"extintores","nombre":"Extintores de revelación","descripcion":"Pequeños y grandes. Variedad de precios para tu presupuesto.","icono":"spray"},
+  {"id":"chispitas","nombre":"Chispitas mariposa","descripcion":"Pequeñas y grandes por docena. Detalle perfecto para fiestas.","icono":"sparkle"},
+  {"id":"serpentinas","nombre":"Serpentinas","descripcion":"Cintas decorativas por tira. Decoración rápida y económica.","icono":"ribbon"},
+  {"id":"otros","nombre":"Más efectos","descripcion":"Biber, spray lanzas llamas, velitas volcán, polvo y más.","icono":"star"},
+  {"id":"armado-polvora","nombre":"Armado de pólvora y efectos","descripcion":"Encargados de los efectos en tu evento. Coordinamos, montamos y hacemos que todo explote en el momento indicado.","icono":"star"},
+  {"id":"armado","nombre":"Armado completo de eventos","descripcion":"Te armamos tu revelación, boda o espectáculo de punta a punta. Cotiza sin compromiso.","icono":"star"}
+]
