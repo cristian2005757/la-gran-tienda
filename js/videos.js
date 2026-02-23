@@ -34,12 +34,14 @@ async function loadAndRenderVideos() {
 
 function createVideoCard(video) {
   const embedUrl = getEmbedUrl(video);
+  const isYoutube = (video.url || '').includes('youtube.com') || (video.url || '').includes('youtu.be');
 
   if (embedUrl) {
+    const youtubeClass = isYoutube ? ' video-card-youtube' : '';
     return `
-      <div class="video-card stagger-item">
-        <div class="video-embed">
-          <iframe src="${embedUrl}" allowfullscreen title="${escapeAttr(video.titulo || 'Video')}"></iframe>
+      <div class="video-card stagger-item${youtubeClass}">
+        <div class="video-embed${isYoutube ? ' video-embed-youtube' : ''}">
+          <iframe src="${embedUrl}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="${escapeAttr(video.titulo || 'Video')}"></iframe>
         </div>
         <div class="video-title">${escapeHtml(video.titulo || 'Video')}</div>
       </div>
@@ -47,27 +49,28 @@ function createVideoCard(video) {
   }
 
   return `
-    <div class="video-card stagger-item">
+    <a href="${escapeAttr(video.url)}" target="_blank" rel="noopener" class="video-card video-card-link stagger-item">
       <div class="video-embed video-link-placeholder">
-        <span>${escapeHtml(video.titulo || 'Ver video')}</span>
-        <small>${escapeHtml(video.plataforma || '')}</small>
-        <a href="${escapeAttr(video.url)}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top:0.75rem;">Ver</a>
+        <span class="video-play-symbol" aria-hidden="true">▶</span>
       </div>
       <div class="video-title">${escapeHtml(video.titulo || 'Video')}</div>
-    </div>
+    </a>
   `;
 }
 
 function getEmbedUrl(video) {
   const url = video.url || '';
+  // YouTube: autoplay + mute (necesario para que el navegador permita autoplay)
   if (url.includes('youtube.com') || url.includes('youtu.be')) {
     const id = url.match(/(?:youtu\.be\/|youtube\.com.*[?&]v=)([^&]+)/)?.[1];
-    return id ? `https://www.youtube.com/embed/${id}` : null;
+    return id ? `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1` : null;
   }
+  // TikTok: URL completa con video ID numérico
   if (url.includes('tiktok.com')) {
     const match = url.match(/video\/(\d+)/);
-    return match ? `https://www.tiktok.com/embed/v2/${match[1]}` : null;
+    if (match) return `https://www.tiktok.com/embed/v2/${match[1]}?autoplay=1`;
   }
+  // vt.tiktok.com: no tiene ID numérico, el embed requiere URL completa tiktok.com/@user/video/ID
   return null;
 }
 

@@ -634,31 +634,61 @@
   background: var(--card-hover);
 }
 
+/* YouTube: formato horizontal, más grande, abajo de los TikToks */
+.video-card-youtube {
+  grid-column: 1 / -1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.video-embed-youtube {
+  aspect-ratio: 16/9;
+}
+
 .video-embed iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
+/* Tarjeta enlace (cuando no hay embed): solo play + título, sin botón Ver */
+.video-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-card-link:hover {
+  border-color: var(--orange);
+  box-shadow: 0 4px 24px rgba(255, 106, 0, 0.2);
+}
+
 .video-link-placeholder {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 280px;
-  padding: var(--space-lg);
+  aspect-ratio: 9/16;
+  background: linear-gradient(180deg, rgba(255,106,0,0.12) 0%, var(--card-hover) 100%);
   color: var(--text-muted);
 }
 
-.video-link-placeholder span {
-  font-weight: 600;
-  font-size: 1.1rem;
+.video-play-symbol {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.9);
+  color: var(--bg);
+  border-radius: 50%;
+  font-size: 1.75rem;
+  padding-left: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  transition: transform var(--ease);
 }
 
-.video-link-placeholder small {
-  margin-top: var(--space-xs);
-  font-size: 0.9rem;
-  opacity: 0.8;
+.video-card-link:hover .video-play-symbol {
+  transform: scale(1.1);
+  background: #fff;
 }
 
 .video-title {
@@ -736,19 +766,21 @@
   margin-bottom: var(--space-xl);
 }
 
-.contact-item h4 {
-  margin-bottom: var(--space-sm);
-  font-size: 1rem;
-  color: var(--text-muted);
-}
-
-.contact-item a {
+.contact-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--orange);
   font-weight: 500;
+  text-decoration: none;
 }
 
-.contact-item a:hover {
+.contact-wa-link:hover {
   text-decoration: underline;
+}
+
+.contact-wa-icon {
+  flex-shrink: 0;
 }
 
 .contact-socials {

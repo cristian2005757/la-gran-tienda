@@ -12,7 +12,7 @@
   {"id":"papelillo-color","name":"Papelillo de color","category":"Papelillo y confeti","price":28000,"unit":"unidad","image":"assets/img/catalog/papelillo-de-color.png","short":"Papelillo en diversos colores"},
   {"id":"papelillo-metalizado","name":"Papelillo metalizado y dorado","category":"Papelillo y confeti","price":22000,"unit":"unidad","image":"assets/img/catalog/papelillo-metalico.png","short":"Papelillo metalizado y dorado"},
   {"id":"papelillo-blanco","name":"Papelillo blanco","category":"Papelillo y confeti","price":23000,"unit":"unidad","image":"assets/img/catalog/papelillo-blanco.png","short":"Papelillo blanco para eventos"},
-  {"id":"velita-volcan","name":"Velita volcán larga duración","category":"Otros efectos","price":0,"unit":"cotización","image":"assets/img/catalog/valita-volcan-larga-duracion.png","short":"Velita volcán de larga duración"},
+  {"id":"velita-volcan","name":"Velita volcán larga duración","category":"Otros efectos","price":0,"unit":"cotización","image":"assets/img/catalog/velita-volcan-larga-duracion.png","short":"Velita volcán de larga duración"},
   {"id":"extintor-pequeno","name":"Extintor de revelación pequeño","category":"Extintores","price":30000,"unit":"unidad","image":"assets/img/catalog/extintor-revelacion.png","short":"Variantes: 30K, 45K, 60K"},
   {"id":"extintor-grande","name":"Extintor grande","category":"Extintores","price":100000,"unit":"5–10 lb","image":"assets/img/catalog/extintor-grande.png","short":"Extintor de revelación grande"},
   {"id":"confeti-color","name":"Confeti de color","category":"Papelillo y confeti","price":0,"unit":"cotización","image":"assets/img/catalog/canones-de-confeti.png","short":"Confeti en diversos colores"},

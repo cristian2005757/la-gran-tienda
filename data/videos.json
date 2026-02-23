@@ -1,20 +1,9 @@
 [
-  {
-    "id": "1",
-    "titulo": "Revelación de género",
-    "plataforma": "tiktok",
-    "url": "https://www.tiktok.com/@laciguenamedellin/video/7506190968656301318"
-  },
-  {
-    "id": "2",
-    "titulo": "Efectos para eventos",
-    "plataforma": "tiktok",
-    "url": "https://www.tiktok.com/@sebastoro.10/video/7548121860899147013"
-  },
-  {
-    "id": "3",
-    "titulo": "Eventos y revelaciones",
-    "plataforma": "tiktok",
-    "url": "https://www.tiktok.com/@eventos_memoriescr/video/7439784533236518200"
-  }
+  {"id":"1","titulo":"Reel destacado 1","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7568188778460843282"},
+  {"id":"2","titulo":"Reel destacado 2","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7556060204618566968"},
+  {"id":"3","titulo":"Reel destacado 3","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7551992666498583819"},
+  {"id":"4","titulo":"Reel destacado 4","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7550546612917964088"},
+  {"id":"5","titulo":"Reel destacado 5","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7546045396271910200"},
+  {"id":"6","titulo":"Reel destacado 6","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7545357910214249784"},
+  {"id":"7","titulo":"Video destacado","plataforma":"youtube","url":"https://youtu.be/6i6Op2wDok8?si=DECi85iETQh8-hPE"}
 ]

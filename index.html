@@ -59,7 +59,7 @@
           <div class="hero-content">
             <p class="hero-sub">Venta + armado de eventos</p>
             <h1>Que tu evento sea <span class="highlight">inolvidable</span></h1>
-            <p class="hero-tagline">Compras insumos o <strong>te armamos todo</strong>: pólvora, efectos y coordinación. Encargados de los efectos en revelaciones, bodas y espectáculos. Respondemos al instante por WhatsApp.</p>
+            <p class="hero-tagline">Compras insumos o <strong>te armamos todo</strong>: efectos especiales y coordinación. Encargados de los efectos en revelaciones, bodas y espectáculos. Respondemos al instante por WhatsApp.</p>
             <p class="hero-trust">+500 eventos realizados</p>
             <div class="hero-buttons">
               <a href="#" class="btn btn-primary btn-whatsapp btn-whatsapp-cotizar">
@@ -80,18 +80,18 @@
       <div class="container">
         <div class="pillars-intro">
           <h2 class="pillars-title">Dos formas de hacerlo</h2>
-          <p>Compras insumos o te armamos todo: pólvora, efectos y coordinación incluidos</p>
+          <p>Compras insumos o te armamos todo: efectos especiales y coordinación incluidos</p>
         </div>
         <div class="pillars-grid">
           <div class="pillar-card">
             <span class="pillar-icon">🛒</span>
             <h3>Compras lo que necesitas</h3>
-            <p>Humo, tortas de revelación, papelillo, confeti, extintores, chispitas, pólvora y más. Envíos y precios al por mayor.</p>
+            <p>Humo, tortas de revelación, papelillo, confeti, extintores, chispitas, efectos especiales y más. Envíos y precios al por mayor.</p>
           </div>
           <div class="pillar-card pillar-highlight">
             <span class="pillar-icon">✨</span>
             <h3>O te lo montamos completo</h3>
-            <p>Armado de pólvora, efectos y toda la coordinación. Nos encargamos de los efectos en tu revelación, boda o show. Cotiza sin compromiso.</p>
+            <p>Armado de efectos especiales y toda la coordinación. Nos encargamos de los efectos en tu revelación, boda o show. Cotiza sin compromiso.</p>
           </div>
         </div>
       </div>
@@ -229,13 +229,8 @@
       const tel = config.telefonos || config.whatsappNumbers || [];
       const msg = encodeURIComponent(config.whatsapp?.mensaje_cotizar || config.whatsapp?.mensajeCotizar || '¡Hola! Me gustaría cotizar.');
       const numPrincipal = config.whatsapp_principal || config.whatsappPrincipal || (tel[0]||'').toString().replace(/\D/g,'') || '573001234567';
-      const fallbackMsg = tel.length === 0 ? '<div class="contact-item"><p style="color:var(--text-muted);">Configura los números en data/config.json</p><a href="https://wa.me/'+numPrincipal+'?text='+msg+'" target="_blank" rel="noopener" class="btn btn-primary btn-whatsapp btn-sm" style="margin-top:0.5rem">Contactar WhatsApp</a></div>' : '';
-      const redesHtml = config.redes ? `<div class="contact-item" style="grid-column:1/-1"><h4>Redes</h4><div class="contact-socials">
-          ${config.redes.facebook?'<a href="'+config.redes.facebook+'" target="_blank" rel="noopener" aria-label="Facebook">FB</a>':''}
-          ${config.redes.instagram?'<a href="'+config.redes.instagram+'" target="_blank" rel="noopener" aria-label="Instagram">IG</a>':''}
-          ${config.redes.tiktok?'<a href="'+config.redes.tiktok+'" target="_blank" rel="noopener" aria-label="TikTok">TT</a>':''}
-        </div></div>` : '';
-      grid.innerHTML = fallbackMsg + tel.map((t,i)=>`<div class="contact-item"><h4>WhatsApp ${tel.length>1?i+1:''}</h4><a href="https://wa.me/${String(t).replace(/\D/g,'')}?text=${msg}" target="_blank" rel="noopener">${t}</a></div>`).join('') + redesHtml;
+      const fallbackMsg = tel.length === 0 ? '<div class="contact-item"><p style="color:var(--text-muted);">Configura los números en data/config.json</p><a href="https://wa.me/'+numPrincipal+'?text='+msg+'" target="_blank" rel="noopener" class="btn btn-primary btn-whatsapp btn-sm" style="margin-top:0.5rem">Contactar</a></div>' : '';
+      grid.innerHTML = fallbackMsg + tel.map((t,i)=>`<div class="contact-item"><a href="https://wa.me/${String(t).replace(/\D/g,'')}?text=${msg}" target="_blank" rel="noopener" class="contact-wa-link"><img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="contact-wa-icon" width="24" height="24">${t}</a></div>`).join('');
     }).catch(()=>{});
   </script>
 </body>

@@ -126,6 +126,10 @@
     grid-template-columns: 1fr;
   }
 
+  .video-card-youtube {
+    max-width: 100%;
+  }
+
   .subsection-title {
     font-size: 1rem;
     margin: var(--space-lg) 0 var(--space-sm);

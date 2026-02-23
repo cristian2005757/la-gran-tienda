@@ -6,6 +6,6 @@
   {"id":"chispitas","nombre":"Chispitas mariposa","descripcion":"Pequeñas y grandes por docena. Detalle perfecto para fiestas.","icono":"sparkle"},
   {"id":"serpentinas","nombre":"Serpentinas","descripcion":"Cintas decorativas por tira. Decoración rápida y económica.","icono":"ribbon"},
   {"id":"otros","nombre":"Más efectos","descripcion":"Biber, spray lanzas llamas, velitas volcán, polvo y más.","icono":"star"},
-  {"id":"armado-polvora","nombre":"Armado de pólvora y efectos","descripcion":"Encargados de los efectos en tu evento. Coordinamos, montamos y hacemos que todo explote en el momento indicado.","icono":"star"},
+  {"id":"armado-polvora","nombre":"Armado de efectos especiales","descripcion":"Encargados de los efectos en tu evento. Coordinamos, montamos y hacemos que todo explote en el momento indicado.","icono":"star"},
   {"id":"armado","nombre":"Armado completo de eventos","descripcion":"Te armamos tu revelación, boda o espectáculo de punta a punta. Cotiza sin compromiso.","icono":"star"}
 ]
