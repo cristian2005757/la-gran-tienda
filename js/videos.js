@@ -29,7 +29,8 @@ async function loadAndRenderVideos() {
     if (conYouTube.length) {
       container.innerHTML = conYouTube.map(v => createVideoCard(v)).join('');
       const section = container.closest('.animate-on-scroll');
-      if (section?.classList.contains('visible')) {
+      if (section) {
+        section.classList.add('visible');
         container.querySelectorAll('.stagger-item').forEach((item, i) => {
           item.style.animationDelay = `${i * 50}ms`;
         });
@@ -42,7 +43,8 @@ async function loadAndRenderVideos() {
       exclusivosTitle.style.display = '';
       exclusivosContainer.innerHTML = local.map(v => createVideoCard(v)).join('');
       const section = exclusivosContainer.closest('.animate-on-scroll');
-      if (section?.classList.contains('visible')) {
+      if (section) {
+        section.classList.add('visible');
         exclusivosContainer.querySelectorAll('.stagger-item').forEach((item, i) => {
           item.style.animationDelay = `${i * 50}ms`;
         });

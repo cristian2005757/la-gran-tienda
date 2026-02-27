@@ -121,6 +121,20 @@ h1, h2, h3, .navbar-logo-fallback {
   }
 }
 
+/* Móvil: sección Clientes visible de inmediato (evita pantalla negra por Intersection Observer) */
+@media (max-width: 768px) {
+  .clientes-section.animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .clientes-section .stagger-item {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
+
 
 section[id] {
   scroll-margin-top: 5rem;
