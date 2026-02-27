@@ -126,8 +126,21 @@
     grid-template-columns: 1fr;
   }
 
+  .videos-grid-local {
+    grid-template-columns: 1fr;
+  }
+
   .video-card-youtube {
     max-width: 100%;
+  }
+
+  .video-card-local {
+    max-width: 100%;
+  }
+
+  .video-embed-local video {
+    max-height: 50vh;
+    object-fit: contain;
   }
 
   .subsection-title {

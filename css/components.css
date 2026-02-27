@@ -645,10 +645,21 @@
   aspect-ratio: 16/9;
 }
 
-.video-embed iframe {
+.video-embed iframe,
+.video-embed video {
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
+}
+
+.video-embed-local video {
+  display: block;
+}
+
+/* Videos locales: mismos estilos que TikTok en desktop */
+.video-card-local .video-embed {
+  aspect-ratio: 9/16;
 }
 
 /* Tarjeta enlace (cuando no hay embed): solo play + título, sin botón Ver */

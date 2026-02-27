@@ -5,5 +5,17 @@
   {"id":"4","titulo":"Reel destacado 4","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7550546612917964088"},
   {"id":"5","titulo":"Reel destacado 5","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7546045396271910200"},
   {"id":"6","titulo":"Reel destacado 6","plataforma":"tiktok","url":"https://www.tiktok.com/@sandraurena_4/video/7545357910214249784"},
-  {"id":"7","titulo":"Video destacado","plataforma":"youtube","url":"https://youtu.be/6i6Op2wDok8?si=DECi85iETQh8-hPE"}
+  {"id":"7","titulo":"Eventos de calidad","plataforma":"local","src":"assets/videos/WhatsApp Video 2026-02-23 at 7.02.19 PM.mp4"},
+  {"id":"8","titulo":"Productos de primera","plataforma":"local","src":"assets/videos/WhatsApp Video 2026-02-23 at 7.02.16 PM.mp4"},
+  {"id":"9","titulo":"Efectos que impactan","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 064406.mp4"},
+  {"id":"10","titulo":"Momentos inolvidables","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 064526.mp4"},
+  {"id":"11","titulo":"Profesionalismo garantizado","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 064634.mp4"},
+  {"id":"12","titulo":"Tu evento, nuestra pasión","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 064751.mp4"},
+  {"id":"13","titulo":"Diseños que sorprenden","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 064909.mp4"},
+  {"id":"14","titulo":"Calidad en cada detalle","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 065056.mp4"},
+  {"id":"15","titulo":"Resultados espectaculares","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 065148.mp4"},
+  {"id":"16","titulo":"Experiencia comprobada","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 065239.mp4"},
+  {"id":"17","titulo":"Celebración perfecta","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 065337.mp4"},
+  {"id":"18","titulo":"Detalles que marcan","plataforma":"local","src":"assets/videos/Grabación 2026-02-27 065421.mp4"},
+  {"id":"19","titulo":"Video destacado","plataforma":"youtube","url":"https://youtu.be/6i6Op2wDok8?si=DECi85iETQh8-hPE"}
 ]
