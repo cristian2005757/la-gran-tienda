@@ -2,6 +2,8 @@
 
 Landing page + catálogo para **La Gran Tienda**, enfocada en efectos y artículos para eventos: revelación de género, bodas, espectáculos.
 
+**🌐 Demo:** [https://la-gran-tienda.vercel.app](https://la-gran-tienda.vercel.app)
+
 ## Características
 
 - **Hero** con nombre, frase y botón "Cotizar por WhatsApp"

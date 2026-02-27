@@ -138,9 +138,18 @@
     max-width: 100%;
   }
 
+  .video-embed-local {
+    min-height: 280px;
+  }
+
   .video-embed-local video {
-    max-height: 50vh;
+    min-height: 240px;
+    max-height: 60vh;
     object-fit: contain;
+  }
+
+  .video-embed {
+    min-height: 200px;
   }
 
   .subsection-title {

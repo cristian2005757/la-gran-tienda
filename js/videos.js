@@ -55,9 +55,27 @@ async function loadAndRenderVideos() {
   }
 }
 
+function isMobileViewport() {
+  return typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+}
+
 function createVideoCard(video) {
   const src = video.src || video.url || '';
   const isLocal = video.plataforma === 'local' || /\.(mp4|webm|mov)(\?|$)/i.test(src) || (src && !/^https?:\/\//.test(src));
+  const isTikTok = (video.url || '').includes('tiktok.com');
+  const mobile = isMobileViewport();
+
+  // TikTok en móvil: iframe no funciona bien, usar tarjeta con enlace (abre en app)
+  if (isTikTok && mobile && video.url) {
+    return `
+    <a href="${escapeAttr(video.url)}" target="_blank" rel="noopener" class="video-card stagger-item video-card-link">
+      <div class="video-embed video-link-placeholder">
+        <span class="video-play-symbol" aria-hidden="true">▶</span>
+      </div>
+      <div class="video-title">${escapeHtml(video.titulo || 'Video')}</div>
+    </a>
+    `;
+  }
 
   // Video local (MP4/WebM en assets/videos/)
   if (isLocal && src) {
@@ -65,7 +83,7 @@ function createVideoCard(video) {
     return `
       <div class="video-card stagger-item video-card-local">
         <div class="video-embed video-embed-local">
-          <video src="${escapeAttr(srcEncoded)}" loop muted playsinline autoplay preload="metadata" title="${escapeAttr(video.titulo || 'Video')}"></video>
+          <video width="360" height="640" src="${escapeAttr(srcEncoded)}" loop muted playsinline webkit-playsinline autoplay preload="metadata" title="${escapeAttr(video.titulo || 'Video')}"></video>
         </div>
         <div class="video-title">${escapeHtml(video.titulo || 'Video')}</div>
       </div>
