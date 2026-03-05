@@ -7,7 +7,8 @@ let productos = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
   showCatalogSkeleton();
-  await loadCatalog();
+  const ok = await loadCatalog();
+  if (!ok) return; // Error mostrado en loadCatalog
   renderFilters();
   renderProducts(productos);
   initSearch();
@@ -34,10 +35,14 @@ async function loadCatalog() {
   try {
     const res = await fetch('data/catalog.json');
     productos = await res.json();
+    return true;
   } catch (err) {
     console.error('Error cargando catálogo:', err);
     const grid = document.getElementById('catalog-grid');
+    const countEl = document.getElementById('catalog-count');
     if (grid) grid.innerHTML = '<p class="no-results" style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--text-muted);">Error al cargar el catálogo.</p>';
+    if (countEl) countEl.textContent = '';
+    return false;
   }
 }
 
@@ -137,7 +142,7 @@ function renderProducts(list) {
         try {
           if (typeof showFeedback === 'function') showFeedback('Abriendo WhatsApp...');
           openWhatsAppProduct(JSON.parse(data));
-        } catch (_) {}
+        } catch (err) { console.error('Error al abrir WhatsApp:', err); }
       }
     });
   });
@@ -177,6 +182,3 @@ function escapeAttr(s) {
   return escapeHtml(s).replace(/"/g, '&quot;');
 }
 
-function escapeJs(s) {
-  return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n');
-}

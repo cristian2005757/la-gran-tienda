@@ -24,7 +24,7 @@ function getWhatsAppNumber() {
 function openWhatsApp(text) {
   const num = getWhatsAppNumber();
   const msg = encodeURIComponent(text);
-  window.open(`https://wa.me/${num}?text=${msg}`, '_blank', 'noopener');
+  window.open(`https://wa.me/${num}?text=${msg}`, '_blank', 'noopener,noreferrer');
 }
 
 function openWhatsAppCotizar() {

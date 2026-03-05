@@ -14,7 +14,6 @@
   <meta property="og:type" content="website">
   <title>La Gran Tienda | Insumos + Armado de eventos. Revelaciones, bodas, espectáculos</title>
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/img/brand/logo.png" type="image/png" sizes="32x32">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -38,7 +37,7 @@
   <header class="navbar" role="banner">
     <nav class="navbar-container container" aria-label="Menú principal">
       <a href="#" aria-label="Ir al inicio">
-        <img src="assets/img/brand/logo.png" alt="La Gran Tienda" class="navbar-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+        <img src="assets/img/brand/logo.svg" alt="La Gran Tienda" class="navbar-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
         <span class="navbar-logo-fallback" style="display:none;">La Gran Tienda</span>
       </a>
       <ul class="navbar-links">
@@ -54,23 +53,23 @@
 
   <main id="main">
     <section class="hero animate-on-scroll visible">
-      <div class="container">
-        <div class="hero-inner">
-          <div class="hero-content">
-            <p class="hero-sub">Venta + armado de eventos</p>
-            <h1>Que tu evento sea <span class="highlight">inolvidable</span></h1>
-            <p class="hero-tagline">Compras insumos o <strong>te armamos todo</strong>: efectos especiales y coordinación. Encargados de los efectos en revelaciones, bodas y espectáculos. Respondemos al instante por WhatsApp.</p>
-            <p class="hero-trust">+500 eventos realizados</p>
-            <div class="hero-buttons">
-              <a href="#" class="btn btn-primary btn-whatsapp btn-whatsapp-cotizar">
-                📱 Cotizar ahora
-              </a>
-              <a href="#catalog" class="btn btn-outline">Ver productos</a>
-              <a href="#servicios" class="btn btn-ghost">Qué ofrecemos</a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <img src="assets/img/hero/hero.jpg" alt="Evento con efectos" onerror="this.style.display='none'">
+      <div class="hero-bg">
+        <img src="assets/img/hero/hero.jpg" alt="" role="presentation" decoding="async" fetchpriority="high"
+             onerror="this.style.opacity='0'">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-sub">Venta + armado de eventos</p>
+          <h1>Que tu evento sea <span class="highlight">inolvidable</span></h1>
+          <p class="hero-tagline">Compras insumos o <strong>te armamos todo</strong>: efectos especiales y coordinación. Encargados de los efectos en revelaciones, bodas y espectáculos. Respondemos al instante por WhatsApp.</p>
+          <p class="hero-trust">+500 eventos realizados</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary btn-whatsapp btn-whatsapp-cotizar">
+              📱 Cotizar ahora
+            </a>
+            <a href="#catalog" class="btn btn-outline">Ver productos</a>
+            <a href="#servicios" class="btn btn-ghost">Qué ofrecemos</a>
           </div>
         </div>
       </div>
@@ -131,10 +130,10 @@
         </div>
         <h3 class="subsection-title">Testimonios sobre armado y efectos</h3>
         <div class="clientes-grid stagger-container" id="clientes-container"></div>
-        <h3 class="subsection-title">Míranos en TikTok</h3>
-        <div class="videos-grid stagger-container" id="videos-container"></div>
-        <h3 class="subsection-title videos-exclusivos-title" id="videos-exclusivos-title" style="display:none;">Clientes satisfechos</h3>
-        <div class="videos-grid stagger-container videos-grid-local" id="videos-exclusivos-container"></div>
+        <h3 class="subsection-title" id="videos-exclusivos-title">Videos de nuestros eventos</h3>
+        <div class="videos-wrapper" id="videos-exclusivos-container"></div>
+        <h3 class="subsection-title">También en TikTok</h3>
+        <div class="videos-wrapper" id="videos-container"></div>
       </div>
     </section>
 
@@ -183,6 +182,7 @@
       <img src="assets/icons/whatsapp.svg" alt="" width="28" height="28" onerror="this.outerHTML='💬'">
     </span>
     <span class="floating-whatsapp-tooltip">¡Cotiza ahora!</span>
+    <span class="floating-whatsapp-label">Cotizar</span>
   </a>
 
   <!-- Barra CTA sticky móvil: Cotizar | Ver catálogo -->
@@ -207,9 +207,11 @@
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     fetch('data/services.json').then(r=>r.json()).then(services=>{
+      const el = document.getElementById('services-grid');
+      if (!el) return;
       const icons = { smoke:'✓', colors:'✓', confetti:'✓', ribbon:'✓', cake:'✓', spray:'✓', sparkle:'✓', star:'✓', event:'✓' };
       const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-      document.getElementById('services-grid').innerHTML = services.map((s,i)=>`
+      el.innerHTML = services.map((s,i)=>`
         <article class="service-card stagger-item" data-stagger-index="${i}">
           <div class="service-icon">${icons[s.icono]||'✓'}</div>
           <h3>${esc(s.nombre)}</h3>
@@ -219,7 +221,9 @@
     }).catch(()=>{});
 
     fetch('data/faq.json').then(r=>r.json()).then(faqs=>{
-      document.getElementById('faq-list').innerHTML = faqs.map((f,i)=>{
+      const el = document.getElementById('faq-list');
+      if (!el) return;
+      el.innerHTML = faqs.map((f,i)=>{
         const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
         return `<div class="faq-item${i===0?' active':''}"><button class="faq-question" type="button" aria-expanded="${i===0}">${esc(f.pregunta)}</button><div class="faq-answer" style="${i===0?'max-height:2000px;':''}"><p>${esc(f.respuesta)}</p></div></div>`;
       }).join('');

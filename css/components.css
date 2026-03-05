@@ -201,7 +201,7 @@
   color: var(--text);
 }
 
-/* Hero - 2 columnas desktop */
+/* Hero - imagen de fondo a pantalla completa */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -211,22 +211,46 @@
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.hero-bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0);
-  background-size: 32px 32px;
+  z-index: 0;
+  background: var(--bg);
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.6s ease;
+}
+
+.hero:hover .hero-bg img {
+  transform: scale(1.03);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(11, 11, 15, 0.92) 0%,
+    rgba(11, 11, 15, 0.75) 35%,
+    rgba(11, 11, 15, 0.5) 65%,
+    rgba(11, 11, 15, 0.3) 100%
+  );
   pointer-events: none;
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  max-width: 560px;
 }
 
 .hero-content {
@@ -245,7 +269,7 @@
 .hero-content h1 {
   color: var(--text);
   margin-bottom: var(--space-md);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content h1 .highlight {
@@ -261,6 +285,7 @@
   color: var(--text-muted);
   margin-bottom: var(--space-sm);
   line-height: 1.6;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero-trust {
@@ -289,24 +314,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-visual img {
-  max-height: 400px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  transition: transform 0.5s ease;
-}
-
-.hero:hover .hero-visual img {
-  transform: scale(1.03);
 }
 
 /* Cards - glassmorphism controlado, tap feedback scale 0.99 */
@@ -610,11 +617,56 @@
 }
 
 /* Videos / TikTok */
+.videos-wrapper {
+  margin-top: var(--space-md);
+}
+
+.videos-wrapper .video-group {
+  margin-bottom: var(--space-xl);
+}
+
+.videos-wrapper .video-group:last-child {
+  margin-bottom: 0;
+}
+
+.video-group-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--orange);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
 .videos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+  justify-content: center;
+  gap: var(--space-md);
   margin-top: var(--space-md);
+  max-width: 100%;
+}
+
+.video-group .videos-grid {
+  margin-top: var(--space-sm);
+}
+
+.video-carousel-dots {
+  display: none;
+}
+
+.video-badge {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: 0.25rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  border-radius: 6px;
+  z-index: 2;
 }
 
 .video-card {
@@ -630,6 +682,7 @@
 }
 
 .video-embed {
+  position: relative;
   aspect-ratio: 9/16;
   background: var(--card-hover);
 }
@@ -665,6 +718,26 @@
   aspect-ratio: 9/16;
 }
 
+/* TikTok embed: formato vertical, recortar marco blanco */
+.video-card-tiktok .video-embed-tiktok {
+  aspect-ratio: 9/16;
+  overflow: hidden;
+}
+
+.video-card-tiktok .video-embed-tiktok iframe {
+  object-fit: cover;
+}
+
+.video-title-link {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.video-title-link:hover {
+  color: var(--orange);
+}
+
 /* Tarjeta enlace (cuando no hay embed): solo play + título, sin botón Ver */
 .video-card-link {
   text-decoration: none;
@@ -680,8 +753,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: var(--space-xs);
   aspect-ratio: 9/16;
-  background: linear-gradient(180deg, rgba(255,106,0,0.12) 0%, var(--card-hover) 100%);
+  background: linear-gradient(180deg, rgba(255,106,0,0.15) 0%, rgba(255,45,45,0.06) 50%, var(--card-hover) 100%);
   color: var(--text-muted);
 }
 
@@ -948,6 +1023,11 @@
 .floating-whatsapp:hover .floating-whatsapp-tooltip {
   opacity: 1;
   visibility: visible;
+}
+
+/* Label visible solo en móvil (debajo del botón) */
+.floating-whatsapp-label {
+  display: none;
 }
 
 /* Pulse suave cada ~10s - respeta prefers-reduced-motion */

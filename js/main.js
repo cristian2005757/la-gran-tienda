@@ -55,6 +55,7 @@ function initNavbar() {
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
 
@@ -62,6 +63,7 @@ function initNavbar() {
     document.addEventListener('click', (e) => {
       if (!links.contains(e.target) && !toggle.contains(e.target)) {
         links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
   }

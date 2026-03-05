@@ -1,65 +1,87 @@
 # La Gran Tienda - Landing Page
 
+**Versión definitiva:** HTML estático. Sin frameworks ni build.
+
 Landing page + catálogo para **La Gran Tienda**, enfocada en efectos y artículos para eventos: revelación de género, bodas, espectáculos.
 
 **🌐 Demo:** [https://la-gran-tienda.vercel.app](https://la-gran-tienda.vercel.app)
 
 ## Características
 
-- **Hero** con nombre, frase y botón "Cotizar por WhatsApp"
+- **Hero** con imagen de fondo y botón "Cotizar por WhatsApp"
 - **Servicios**: humo, papelillo, serpentinas, tortas de revelación, etc.
-- **Catálogo** con categorías, filtros, buscador y botón "Pedir este" por WhatsApp
-- **Videos**: enlaces a Reels/Shorts/TikTok embebidos
-- **FAQ** y **Contacto** con dos números y redes sociales
+- **Catálogo** con categorías, filtros, buscador y botón "Pedir por WhatsApp"
+- **Videos**: TikTok, YouTube y videos locales
+- **Testimonios** de clientes
+- **FAQ** y **Contacto** con números de WhatsApp
+
+## Desarrollo local
+
+```bash
+npm run dev
+```
+
+Se abre en `http://localhost:3000` (o el puerto que asigne `serve`).
+
+> **Importante:** Usa siempre un servidor local. Los `fetch` a los JSON no funcionan con `file://`.
+
+## Despliegue en Vercel
+
+1. Sube el proyecto a **GitHub**
+2. En [vercel.com](https://vercel.com), importa el repositorio
+3. **Framework Preset:** Other (o déjalo en detectado)
+4. **Build Command:** (dejar vacío)
+5. **Output Directory:** (dejar vacío o `.`)
+6. Vercel detectará que es un sitio estático y servirá `index.html` desde la raíz
+
+No requiere build. El sitio se despliega tal cual.
 
 ## Estructura del proyecto
 
 ```
 la-gran-tienda-landing/
-├── index.html
+├── index.html           # Punto de entrada
+├── package.json         # Scripts: npm run dev
 ├── data/
-│   ├── config.json      # nombre, teléfonos, redes, colores
-│   ├── services.json    # servicios
-│   ├── catalog.json    # productos y categorías
-│   ├── videos.json     # links a videos
-│   └── faq.json        # preguntas frecuentes
+│   ├── config.json      # Teléfonos, WhatsApp, redes
+│   ├── services.json    # Servicios
+│   ├── catalog.json     # Productos (19 items)
+│   ├── videos.json      # TikTok, YouTube, videos locales
+│   ├── testimonials.json # Testimonios
+│   └── faq.json         # Preguntas frecuentes
 ├── css/
+│   ├── main.css
+│   ├── components.css
+│   └── responsive.css
 ├── js/
+│   ├── main.js
+│   ├── catalog.js
+│   ├── videos.js
+│   ├── testimonials.js
+│   └── whatsapp.js
 └── assets/
+    ├── icons/
+    ├── img/
+    │   ├── brand/       # logo.svg
+    │   ├── hero/        # hero.jpg
+    │   └── catalog/     # Imágenes de productos
+    └── videos/          # 12 MP4 locales
 ```
 
-## Desarrollo local
+## Configuración de datos
 
-Abre `index.html` directamente en el navegador o usa un servidor local:
-
-```bash
-npx serve .
-# o
-python -m http.server 8000
-```
-
-> **Nota:** Para que los `fetch` a los JSON funcionen, debes usar un servidor local (no abrir el archivo con `file://`).
-
-## Despliegue
-
-Sube a **GitHub** y conecta con **Netlify** o **Vercel**. No requiere build.
-
-### Configurar datos de contacto
-
-Edita `data/config.json`:
+### Contacto (`data/config.json`)
 
 - `telefonos`: números de WhatsApp
-- `whatsapp_principal`: número por defecto para enlaces
+- `whatsapp_principal`: número por defecto
 - `redes`: Facebook, Instagram, TikTok
 
-### Agregar productos
+### Productos (`data/catalog.json`)
 
-Edita `data/catalog.json`. Cada producto incluye:
-
-- `nombre`, `categoria`, `precio`
-- `imagen`: ruta relativa dentro de `assets/img/`
-- Opcionales: `precio_mayor`, `unidad`, `descripcion`
+- `name`, `category`, `price`, `unit`
+- `image`: ruta relativa en `assets/img/catalog/`
+- `short`: descripción breve
 
 ## Diseño
 
-Paleta naranja/rojo/amarillo, fondos suaves y botones fuertes. Responsive y accesible.
+Paleta naranja/rojo/amarillo, tema oscuro, fondos suaves. Responsive y accesible.

@@ -1,0 +1,8 @@
+{
+  "name": "la-gran-tienda-landing",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
